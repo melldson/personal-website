@@ -36,7 +36,7 @@ export function BootOverlay({ onDone }: { onDone: () => void }) {
 
   return (
     <div
-      className="fixed inset-0 z-[80] overflow-y-auto bg-[#0a0e14] px-5 py-8 font-mono text-xs text-[#ece8e1] sm:px-10 sm:py-12"
+      className="fixed inset-0 z-[80] overflow-y-auto bg-black px-5 py-8 font-mono text-xs text-[#e8e6e1] sm:px-10 sm:py-12"
       style={{
         paddingTop: "max(2rem, env(safe-area-inset-top))",
         paddingBottom: "max(2rem, env(safe-area-inset-bottom))",
@@ -52,7 +52,7 @@ export function BootOverlay({ onDone }: { onDone: () => void }) {
       <div className="mx-auto max-w-xl">
         <div className="mb-8 flex items-baseline justify-between tracking-wide">
           <span className="font-medium">{BIOS.headerLeft}</span>
-          <span className="text-[#8b93a0]">{BIOS.headerRight}</span>
+          <span className="text-[#bdbab3]">{BIOS.headerRight}</span>
         </div>
         <div className="space-y-1 sm:space-y-0.5">
           {rows.slice(0, visibleCount).map((row) => (
@@ -65,22 +65,22 @@ export function BootOverlay({ onDone }: { onDone: () => void }) {
           ))}
         </div>
         {ready ? (
-          <div className="mx-auto mt-16 flex max-w-[22rem] items-center gap-3 rounded-sm border border-[#ffffff22] px-3 py-2.5 text-[#8b93a0]">
+          <div className="mx-auto mt-16 flex max-w-[22rem] items-center gap-3 rounded-sm border border-[#4a4a46] px-3 py-2.5 text-[#9c9a94]">
             <span
               aria-hidden
-              className="boot-cursor inline-block h-[1.05em] w-[0.6em] shrink-0 bg-[#c45c26]"
+              className="boot-cursor inline-block h-[1.05em] w-[0.6em] shrink-0 bg-[#3de8ff]"
             />
             <span>press any key to continue …</span>
           </div>
         ) : null}
       </div>
       <div
-        className="absolute right-4 bottom-4 flex gap-2 text-[10px] tracking-widest text-[#7d8490] sm:right-10 sm:bottom-8 sm:gap-4"
+        className="absolute right-4 bottom-4 flex gap-2 text-[10px] tracking-widest text-[#7b7973] sm:right-10 sm:bottom-8 sm:gap-4"
         style={{ marginBottom: "env(safe-area-inset-bottom)" }}
       >
         <button
           type="button"
-          className="px-2 py-2 hover:text-[#ece8e1] sm:p-0"
+          className="px-2 py-2 hover:text-[#e8e6e1] sm:p-0"
           onClick={(e) => {
             e.stopPropagation();
             setPaused((p) => !p);
@@ -90,7 +90,7 @@ export function BootOverlay({ onDone }: { onDone: () => void }) {
         </button>
         <button
           type="button"
-          className="px-2 py-2 hover:text-[#ece8e1] sm:p-0"
+          className="px-2 py-2 hover:text-[#e8e6e1] sm:p-0"
           onClick={(e) => {
             e.stopPropagation();
             onDone();

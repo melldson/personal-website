@@ -17,14 +17,14 @@ function Tile({
       aria-label={label}
       className="group/dock relative z-10 flex shrink-0 items-end transition-transform duration-150 ease-out hover:-translate-y-1 focus-visible:outline-none"
     >
-      <span className="block origin-bottom rounded-[4px] border border-[var(--hair)] bg-[#161c28] p-[3px] leading-none">
-        <span className="flex h-9 w-9 items-center justify-center text-[#ece8e1]">
+      <span className="block origin-bottom rounded-[4px] border border-[#1a1a17] bg-[#f7f4ee] p-[3px] leading-none shadow-[2px_2px_0_rgba(27,27,31,0.16)]">
+        <span className="flex h-9 w-9 items-center justify-center text-[#1a1a17]">
           {children}
         </span>
       </span>
       <span
         aria-hidden
-        className="pointer-events-none absolute left-1/2 -translate-x-1/2 whitespace-nowrap border border-[var(--hair)] bg-[#121820] px-1.5 py-0.5 font-mono text-[10px] tracking-widest text-[#ece8e1] opacity-0 transition-opacity duration-150 group-hover/dock:opacity-100 group-focus-visible/dock:opacity-100"
+        className="pointer-events-none absolute left-1/2 -translate-x-1/2 whitespace-nowrap border border-[#c8c2b4] bg-[#fdfcf9] px-1.5 py-0.5 font-mono text-[10px] tracking-widest text-[#1a1a17] opacity-0 shadow-[2px_2px_0_rgba(27,27,31,0.16)] transition-opacity duration-150 group-hover/dock:opacity-100 group-focus-visible/dock:opacity-100"
         style={{ bottom: "calc(44px + 10px)" }}
       >
         {label}

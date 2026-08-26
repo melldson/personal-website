@@ -152,7 +152,7 @@ export function Desktop({ children }: { children: ReactNode }) {
         {windowMode === "minimized" ? (
           <button
             type="button"
-            className="absolute bottom-20 z-40 hidden rounded-md border border-[var(--hair)] bg-[#121820] px-3 py-1.5 text-[11px] tracking-wide text-[#ece8e1] sm:block"
+            className="absolute bottom-20 z-40 hidden rounded-md border border-[#1a1a17]/20 bg-[#f7f4ee] px-3 py-1.5 text-[11px] tracking-wide text-[#1a1a17] shadow-[2px_2px_0_rgba(27,27,31,0.16)] sm:block"
             onClick={() => setWindowMode("windowed")}
           >
             melldson — terminal
@@ -324,7 +324,7 @@ export function Desktop({ children }: { children: ReactNode }) {
                               }
                             }
                           }}
-                          className="w-full rounded-md bg-transparent px-0 py-1 font-[inherit] text-[var(--fg)] caret-[#c45c26] outline-none placeholder:text-[var(--dim)] focus:px-2 focus:ring-1 focus:ring-[var(--hair)]"
+                          className="w-full rounded-md bg-transparent px-0 py-1 font-[inherit] text-[var(--fg)] outline-none placeholder:text-[var(--dim)] focus:px-2 focus:ring-1 focus:ring-[var(--accent)]"
                         />
                       </span>
                     </form>
