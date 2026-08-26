@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --term-bg: #141414;
+  --frame-fill: #1c1c1a;
+  --frame-edge: #2e2e2a;
+  --frame-shadow:
+    0 2px 4px #1c160c2e,
+    0 12px 26px #1c160c2e,
+    0 34px 58px -10px #1c160c57;
+  --fg: #efece6;
+  --accent: #5ad4f2;
+  --cmd: #e8a04a;
+  --live: #6dca7a;
+  --link: #6aa8f5;
+  --dim: #8a8680;
+  --chrome: #9c9890;
+  --border: #ffffff18;
+  --ctl-min: #febc2e;
+  --ctl-max: #28c840;
+  --ctl-close: #ff5f57;
+  --background: #000;
+  --foreground: #efece6;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-mono);
+  --font-mono: var(--font-geist-mono);
+}
+
+html,
+body {
+  height: 100%;
+  background: #000;
+  color: var(--fg);
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo,
+    Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+}
+
+.desk {
+  background: #0c0c0b;
+}
+
+.term-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #3a3a36 transparent;
+}
+
+.boot-cursor {
+  animation: boot-blink 1.05s steps(1, end) infinite;
+}
+
+@keyframes boot-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.dock-glass {
+  background: #cecac2f2;
+  box-shadow: 0 10px 30px -12px #14100a6b;
+  backdrop-filter: blur(16px) saturate(1.5);
+}
+
+.dock-glass::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(160deg, #ffffff80 0%, #ffffff24 26%, #fff0 55%);
+  box-shadow: inset 0 1px #ffffff8c;
+}
+
+::selection {
+  background: #5ad4f255;
+}
