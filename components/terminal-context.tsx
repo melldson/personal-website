@@ -19,7 +19,7 @@ export function LuckyButton() {
     <button
       type="button"
       onClick={() => terminal?.run(randomLuckyCommand())}
-      className="mt-4 rounded-sm border border-[var(--accent)] px-3 py-1.5 text-[12px] tracking-wide text-[var(--accent)] hover:bg-[var(--accent)]/10"
+      className="mt-4 rounded-sm border border-[var(--hair)] px-3 py-1.5 text-[12px] tracking-wide text-[var(--fg)] hover:bg-white/5"
     >
       feeling lucky
     </button>

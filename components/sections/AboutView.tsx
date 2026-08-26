@@ -1,11 +1,11 @@
 import { ABOUT_PARAGRAPHS, LINKS, SITE, UPDATES } from "@/lib/content";
-import { DitheredPortrait } from "../DitheredPortrait";
+import { Portrait } from "../Portrait";
 import { Block, DottedRow, ExtLink, Hint, PromptLine } from "../marks";
 
 export function WhoisCard() {
   return (
     <div className="flex gap-4 sm:gap-6">
-      <DitheredPortrait />
+      <Portrait />
       <div className="min-w-0 flex-1 space-y-0.5 self-center">
         <DottedRow label="NAME" value={SITE.name} />
         <DottedRow label="ROLE" value={SITE.role} />
