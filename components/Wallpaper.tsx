@@ -1,32 +1,3 @@
-type Dot = { x: number; y: number; r: number; o: number };
-
-function makeDots(): Dot[] {
-  const dots: Dot[] = [];
-  const cols = 70;
-  const rows = 46;
-  for (let row = 0; row < rows; row += 1) {
-    for (let col = 0; col < cols; col += 1) {
-      const x = ((col + (row % 2) * 0.5) / cols) * 100;
-      const y = (row / (rows - 1)) * 100;
-      const wave =
-        Math.sin((x / 100) * Math.PI * 2.35 + (y / 100) * 1.55) * 0.5 + 0.5;
-      const ridge = Math.sin((x / 100) * Math.PI * 1.1 + 0.4) * 0.18;
-      const band = Math.abs(y / 100 - (0.46 + ridge));
-      const r = 0.14 + wave * 0.62 + (1 - Math.min(1, band * 3.2)) * 0.22;
-      if (r < 0.28) continue;
-      dots.push({
-        x,
-        y,
-        r,
-        o: 0.18 + wave * 0.42,
-      });
-    }
-  }
-  return dots;
-}
-
-const DOTS = makeDots();
-
 export function Wallpaper() {
   return (
     <div
@@ -49,21 +20,35 @@ export function Wallpaper() {
             <stop offset="55%" stopColor="#3e8a3a" />
             <stop offset="100%" stopColor="#2f6d30" />
           </linearGradient>
-          <filter id="grain" x="-20%" y="-20%" width="140%" height="140%">
+          <pattern
+            id="halftone"
+            width="1.8"
+            height="1.6"
+            patternUnits="userSpaceOnUse"
+          >
+            <circle cx="0.45" cy="0.8" r="0.38" fill="#2a5fb8" />
+            <circle cx="1.35" cy="0" r="0.28" fill="#2a5fb8" />
+            <circle cx="1.35" cy="1.6" r="0.28" fill="#2a5fb8" />
+          </pattern>
+          <pattern
+            id="halftone-fine"
+            width="1.15"
+            height="1"
+            patternUnits="userSpaceOnUse"
+          >
+            <circle cx="0.3" cy="0.5" r="0.18" fill="#2a5fb8" />
+            <circle cx="0.88" cy="0" r="0.12" fill="#2a5fb8" />
+            <circle cx="0.88" cy="1" r="0.12" fill="#2a5fb8" />
+          </pattern>
+          <filter id="grain">
             <feTurbulence
               type="fractalNoise"
-              baseFrequency="0.85"
+              baseFrequency="0.9"
               numOctaves="2"
               stitchTiles="stitch"
-              result="n"
             />
-            <feColorMatrix
-              in="n"
-              type="saturate"
-              values="0"
-              result="g"
-            />
-            <feBlend in="SourceGraphic" in2="g" mode="multiply" />
+            <feColorMatrix type="saturate" values="0" />
+            <feBlend in="SourceGraphic" mode="multiply" />
           </filter>
         </defs>
         <rect width="100" height="100" fill="url(#paper)" />
@@ -76,19 +61,17 @@ export function Wallpaper() {
           opacity="0.28"
           d="M0 68 C 18 62, 30 74, 48 66 S 78 58, 100 70 L 100 100 L 0 100 Z"
         />
-        <g filter="url(#grain)" opacity="0.9">
-          {DOTS.map((d, i) => (
-            <circle
-              key={i}
-              cx={d.x}
-              cy={d.y}
-              r={d.r}
-              fill="#2a5fb8"
-              opacity={d.o}
-            />
-          ))}
-        </g>
-        <rect width="100" height="100" fill="#3a3226" opacity="0.06" />
+        <path
+          fill="url(#halftone)"
+          opacity="0.55"
+          d="M0 28 C 18 18, 36 40, 54 26 S 82 14, 100 30 L 100 72 C 82 84, 64 58, 46 70 S 16 86, 0 68 Z"
+        />
+        <path
+          fill="url(#halftone-fine)"
+          opacity="0.35"
+          d="M0 8 C 20 2, 40 16, 60 6 S 88 0, 100 10 L 100 38 C 80 28, 58 44, 36 32 S 12 22, 0 28 Z"
+        />
+        <rect width="100" height="100" fill="#3a3226" opacity="0.05" />
       </svg>
     </div>
   );

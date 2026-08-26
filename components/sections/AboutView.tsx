@@ -52,7 +52,7 @@ export function UpdatesLog() {
 
 export function AboutView({ prompt }: { prompt: string }) {
   return (
-    <div className="space-y-7 sm:space-y-8">
+    <div className="space-y-5 sm:space-y-6">
       <Block>
         <PromptLine prompt={prompt} command="whois melldson" />
         <WhoisCard />

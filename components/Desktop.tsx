@@ -73,8 +73,9 @@ export function Desktop({ children }: { children: ReactNode }) {
   }
 
   useEffect(() => {
+    if (extras.length === 0) return;
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight });
-  }, [extras, cleared]);
+  }, [extras]);
 
   const finishBoot = useCallback(() => {
     setBooted(true);
@@ -176,7 +177,7 @@ export function Desktop({ children }: { children: ReactNode }) {
             className={`term pointer-events-auto flex flex-col overflow-hidden sm:transition-[max-width,height,border-radius] duration-300 ${
               isMax
                 ? "fixed inset-0 z-[60] h-full rounded-none"
-                : "fixed inset-0 z-40 sm:relative sm:inset-auto sm:z-auto sm:h-[min(68vh,calc(100dvh-13rem))] sm:w-full sm:max-w-3xl sm:rounded-xl sm:border sm:border-[var(--frame-edge)]"
+                : "fixed inset-0 z-40 sm:relative sm:inset-auto sm:z-auto sm:h-[min(76vh,calc(100dvh-9rem))] sm:w-full sm:max-w-3xl sm:rounded-xl sm:border sm:border-[var(--frame-edge)]"
             }`}
             style={{
               transform:
@@ -271,7 +272,7 @@ export function Desktop({ children }: { children: ReactNode }) {
               ref={scrollRef}
               className="term-scroll flex min-h-0 flex-1 cursor-text flex-col overflow-y-auto overscroll-contain bg-[var(--term-bg)] font-mono text-[13px] text-[var(--fg)] sm:text-[15px]"
             >
-              <div className="w-full space-y-6 px-4 pt-5 pb-8 sm:space-y-8 sm:px-8 sm:pt-7 sm:pb-9">
+              <div className="w-full space-y-6 px-4 pt-5 pb-8 sm:space-y-7 sm:px-8 sm:pt-6 sm:pb-8">
                 {mode === "agent" ? (
                   <AgentView section={section} />
                 ) : (
