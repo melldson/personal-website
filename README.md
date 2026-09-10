@@ -2,7 +2,7 @@
 
 Personal site for Melldson Soliz — a small fake desktop OS with a terminal, not a conventional portfolio.
 
-Staff DevSecOps at Everysk. I keep the platform and security layer quiet enough that the product can move.
+Engineer with a strong foundation architecting and securing systems in startup and finance environments. Using AI to accelerate how I build, monitor, and scale infrastructure — turning complex, compliance-heavy environments into faster, more reliable systems.
 
 ## Run locally
 

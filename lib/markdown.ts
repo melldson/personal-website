@@ -76,8 +76,6 @@ export const LLMS_TXT = `# Melldson Soliz
 
 > ${SITE.oneLiner}
 
-Staff DevSecOps Engineer at Everysk Technologies. Brazil.
-
 This file is the machine-readable version of this site.
 Individual page: /md/about
 

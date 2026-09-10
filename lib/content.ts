@@ -1,9 +1,11 @@
+export const BIO =
+  "Engineer with a strong foundation architecting and securing systems in startup and finance environments. Using AI to accelerate how I build, monitor, and scale infrastructure — turning complex, compliance-heavy environments into faster, more reliable systems.";
+
 export const SITE = {
   title: "melldson",
   handle: "melldson",
   name: "Melldson Soliz",
-  oneLiner:
-    "Staff DevSecOps at Everysk. I keep the platform and security layer quiet enough that the product can move.",
+  oneLiner: BIO,
   role: "Staff DevSecOps Engineer",
   org: "Everysk Technologies",
   location: "Brazil",
@@ -28,11 +30,7 @@ export const BIOS = {
   ],
 } as const;
 
-export const ABOUT_PARAGRAPHS = [
-  "I run platform and security at Everysk, an automation platform for investment operations. Kubernetes, GCP, pipelines, and making security the default instead of a scramble.",
-  "Before DevOps I was a software engineer on the same team. Before Everysk I did BI and IT at Metadados in Caxias do Sul.",
-  "Outside of work I train triathlon. Based in Brazil.",
-] as const;
+export const ABOUT_PARAGRAPHS = [BIO] as const;
 
 export const UPDATES = [
   {
@@ -84,7 +82,7 @@ export const WORK: WorkItem[] = [
   },
   {
     id: 3,
-    period: "",
+    period: "2019 – 2021",
     title: "Data Analyst",
     org: "Metadados",
     status: "past",
