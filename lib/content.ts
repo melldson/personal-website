@@ -9,7 +9,7 @@ export const SITE = {
   role: "Staff DevSecOps Engineer",
   org: "Everysk Technologies",
   location: "Brazil",
-  focus: "Kubernetes · GCP · CI/CD · security",
+  focus: "GCP · CI/CD · security",
 } as const;
 
 export const LINKS = {
@@ -22,7 +22,7 @@ export const BIOS = {
   headerRight: "melldson",
   rows: [
     { label: "Manufactured", value: "Brazil" },
-    { label: "Firmware", value: "DevSecOps · GCP · Kubernetes" },
+    { label: "Firmware", value: "DevSecOps · GCP" },
     { label: "Locales", value: "pt · en" },
     { label: "Volumes mounted", value: "/metadados /everysk" },
     { label: "Root filesystem", value: "/brazil · triathlon" },
